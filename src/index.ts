@@ -103,3 +103,8 @@ let ahmed = new Employee();
 let mgr = new Manager(1, "Fahad", "999", new Date());
 
 // interfaces, they can be used as types, idk dont do that
+
+/**
+ * TYPESCRIPT CAN NEVER STOP YOU FROM COMPILING YOUR CODE
+ * IT JUST GIVES YOU ERROR MESSAGES
+ */
