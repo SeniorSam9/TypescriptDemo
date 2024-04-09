@@ -3,7 +3,7 @@
 // if void, do not write it
 let fname: string;
 fname = "Rayan";
-console.log(fname);
+//console.log(fname);
 
 // numbers, number type include int and float
 let age = 23;
@@ -15,7 +15,7 @@ let parsedAge = parseInt("23");
 let arr: Array<number>;
 arr = [1, 2, 3, 5, 7, 9];
 let resultedArr = arr.filter((n) => n > 2);
-console.log(resultedArr);
+//console.log(resultedArr);
 let sum = arr.reduce((acc, el) => {
   return acc + el;
 });
@@ -41,7 +41,7 @@ const addOptional: Function = (
   b: number,
   optionalC?: number
 ): number => {
-  console.log(optionalC);
+  //console.log(optionalC);
   return a + b;
 };
 
@@ -69,10 +69,20 @@ class Employee {
     Employee.employeesCount++;
   }
 
+  get getName(): string | undefined {
+    return this.name;
+  }
+
+  get getAddress(): string | undefined {
+    return this.address;
+  }
+
   toString(): string {
     return `Employee ${this.name} with address of ${this.address}`;
   }
 }
+
+// inheritance
 
 class Manager extends Employee {
   private mDay: Date;
@@ -81,7 +91,15 @@ class Manager extends Employee {
     super(id, name, address);
     this.mDay = mDay;
   }
+
+  toString(): string {
+    // in mutators methods, if to call, do not use "()"
+    return `Manager ${super.getName} with address of ${super.getAddress}`;
+  }
 }
 
 let rayan = new Employee(1, "rayan", "34222");
 let ahmed = new Employee();
+let mgr = new Manager(1, "Fahad", "999", new Date());
+
+// interfaces, they can be used as types, idk dont do that
